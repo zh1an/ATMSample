@@ -40,6 +40,7 @@ public:
               if (this->balance >= msg.amount)
               {
                 this->balance -= msg.amount;
+                msg.atm_queue.send(atm_sample::withdraw_ok());
               }
             })
             .handle<get_balance>([&](get_balance const &msg) { msg.atm_queue.send(atm_sample::balance(balance)); })

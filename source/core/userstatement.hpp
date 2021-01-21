@@ -26,7 +26,10 @@ public:
       for (;;)
       {
         incoming.wait()
-            .handle<issue_money>([&](issue_money const &msg) { std::cout << "Issuing " << msg.amount << std::endl; })
+            .handle<issue_money>([&](issue_money const &msg) {
+                std::cout << "Issuing " << msg.amount << std::endl;
+                
+            })
             .handle<display_insufficient_funds>(
                 [&](display_insufficient_funds const &msg) { std::cout << "Insufficient funds" << std::endl; })
             .handle<display_enter_pin>(

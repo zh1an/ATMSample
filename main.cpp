@@ -1,9 +1,10 @@
-#include <iostream>
-
 #include <core/atmmessage.hpp>
 #include <core/atmstatement.hpp>
 #include <core/bankstatement.hpp>
 #include <core/userstatement.hpp>
+
+#include <iostream>
+#include <thread>
 
 int main()
 {
