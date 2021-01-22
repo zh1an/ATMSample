@@ -34,7 +34,7 @@ class dispatcher
     }
   }
 
-  bool dispatch(std::shared_ptr<message_base> const &msg) // 2 dispatch()会检查close_queue消息，然后抛出
+  bool dispatch(std::shared_ptr<message_base> const &msg)  // 2 dispatch()会检查close_queue消息，然后抛出
   {
     if (dynamic_cast<wrapped_message<close_queue> *>(msg.get()))
     {

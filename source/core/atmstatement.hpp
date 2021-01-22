@@ -58,8 +58,7 @@ class atm
   {
     incoming.wait()
         .handle<pin_verified>([&](pin_verified const &msg) {
-            state = &atm::wait_for_action;
-            
+          state = &atm::wait_for_action;
         })
         .handle<pin_incorrect>([&](pin_incorrect const &msg) {
           interface_hardware.send(display_pin_incorrect_message());

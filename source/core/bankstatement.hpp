@@ -44,10 +44,8 @@ public:
               }
             })
             .handle<get_balance>([&](get_balance const &msg) { msg.atm_queue.send(atm_sample::balance(balance)); })
-            .handle<withdrawal_processed>([&](withdrawal_processed const &msg) {
-            })
-            .handle<cancel_withdrawal>([&](cancel_withdrawal const &msg) {
-            });
+            .handle<withdrawal_processed>([&](withdrawal_processed const &msg) {})
+            .handle<cancel_withdrawal>([&](cancel_withdrawal const &msg) {});
       }
     }
     catch (messaging::close_queue const &)

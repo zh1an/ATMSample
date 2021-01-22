@@ -21,7 +21,8 @@ int main()
 
   bool quit_pressed = false;
 
-  while (!quit_pressed) {
+  while (!quit_pressed)
+  {
     char c = getchar();
     switch (c)
     {
@@ -43,7 +44,7 @@ int main()
       case 'w':
         atm_queue.send(atm_sample::withdraw_pressed(50));
         break;
-      case 'c' :
+      case 'c':
         atm_queue.send(atm_sample::cancel_pressed());
         break;
       case 'q':
@@ -52,8 +53,8 @@ int main()
       case 'i':
         atm_queue.send(atm_sample::card_inserted("acc1234"));
         break;
-//      default:
-//        break;
+        //      default:
+        //        break;
     }
   }
 
